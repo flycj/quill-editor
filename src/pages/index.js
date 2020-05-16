@@ -38,6 +38,7 @@ export default function Index(props) {
 			modules: {
 				toolbar: defaultToolbar
 			},
+			placeholder: '请输入内容...',
 			formats: [
 				'bold',
 				// 'header',

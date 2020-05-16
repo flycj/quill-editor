@@ -106,7 +106,7 @@ class SnowTooltip extends BaseTooltip {
         '<input type="text" placeholder="e=mc^2"">',
       ].join(' ');
       case 'image': return [
-        '设置图片宽度：<input type="text" placeholder="数字">',
+        '设置图片宽度像素值：<input type="text" placeholder="">',
       ].join(' ');
     }
   }
@@ -133,7 +133,7 @@ class SnowTheme extends BaseTheme {
     this.buildButtons(toolbar.container.querySelectorAll('button'), icons);
     this.buildPickers(toolbar.container.querySelectorAll('select'), icons);
     this.tooltip = new SnowTooltip(this.quill, this.options.bounds);
-    console.log('SnowTheme extendToolbar', this.options.bounds, toolbar)
+    // console.log('SnowTheme extendToolbar', this.options.bounds, toolbar)
     if (toolbar.container.querySelector('.ql-link')) {
       this.quill.keyboard.addBinding(
         { key: 'k', shortKey: true },

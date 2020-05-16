@@ -9,7 +9,7 @@ const debug = logger('quill:toolbar');
 class Toolbar extends Module {
   constructor(quill, options) {
     super(quill, options);
-    console.log('Toolbar init', options);
+    // console.log('Toolbar init', options);
     if (Array.isArray(this.options.container)) {
       const container = document.createElement('div');
       addControls(container, this.options.container);
@@ -192,7 +192,7 @@ function addControls(container, groups) {
 function addSelect(container, format, values) {
   const input = document.createElement('select');
   input.classList.add(`ql-${format}`);
-  console.log('addSelect', container, format, values);
+  // console.log('addSelect', container, format, values);
   values.forEach(value => {
     const option = document.createElement('option');
     if (value !== false) {

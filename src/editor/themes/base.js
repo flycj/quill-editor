@@ -26,7 +26,7 @@ const HEADERS = ['1', '2', '3', false];
 
 const SIZES = ['20px', '18px', '16px', '14px', '12px'];
 
-const LINEHEIGHTS = ['1', '1.5', '2', '2.5', '3'];
+const LINEHEIGHTS = ['1', '1.5', '1.8', '2', '2.5', '3'];
 
 function handleVideoUrl(src) {
   var url = null
@@ -87,7 +87,7 @@ class BaseTheme extends Theme {
 
   addModule(name) {
     const module = super.addModule(name);
-    console.log("addModule", name);
+    // console.log("addModule", name);
     if (name === 'toolbar') {
       this.extendToolbar(module);
     }
@@ -95,7 +95,7 @@ class BaseTheme extends Theme {
   }
 
   buildButtons(buttons, icons) {
-    console.log('buildButtons', buttons, icons);
+    // console.log('buildButtons', buttons, icons);
     Array.from(buttons).forEach(button => {
       const className = button.getAttribute('class') || '';
       className.split(/\s+/).forEach(name => {
@@ -117,7 +117,7 @@ class BaseTheme extends Theme {
   }
 
   buildPickers(selects, icons) {
-    console.log('selects buildPickers', selects, icons);
+    // console.log('selects buildPickers', selects, icons);
     this.pickers = Array.from(selects).map(select => {
       if (select.classList.contains('ql-align')) {
         if (select.querySelector('option') == null) {
@@ -143,9 +143,8 @@ class BaseTheme extends Theme {
       }
       if (select.classList.contains('ql-lineheight')) {
         if (select.querySelector('option') == null) {
-          fillSelect(select, LINEHEIGHTS, '2');
+          fillSelect(select, LINEHEIGHTS, '1.8');
         }
-        console.log('icons.lineHeight', icons.lineHeight);
         return new LineHeightPicker(select, icons.lineHeight);
       }
       if (select.querySelector('option') == null) {

@@ -8,7 +8,7 @@ import {
 } from './formats/direction';
 import Indent from './formats/indent';
 
-import Blockquote, {BlockquoteItem} from './formats/blockquote';
+import Blockquote from './formats/blockquote';
 import Header from './formats/header';
 import List from './formats/list';
 
@@ -84,7 +84,6 @@ Quill.register(
     'formats/lineheight': LineheightStyle,
 
     'formats/blockquote': Blockquote,
-    'formats/blockquote-item': BlockquoteItem,
     'formats/code-block': CodeBlock,
     'formats/header': Header,
     'formats/list': List,

@@ -20,14 +20,10 @@ class ColorPicker extends Picker {
 
   selectItem(item, trigger) {
     super.selectItem(item, trigger);
-    const colorLabel = this.label.querySelector('.ql-color-label');
+    const colorLabel = this.label.querySelector('.icon');
     const value = item ? item.getAttribute('data-value') || '' : '';
     if (colorLabel) {
-      if (colorLabel.tagName === 'line') {
-        colorLabel.style.stroke = value;
-      } else {
-        colorLabel.style.fill = value;
-      }
+      colorLabel.style.color = value;
     }
   }
 }

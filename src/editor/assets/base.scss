@@ -18,7 +18,7 @@ $colorItemsPerRow: 3;
     height: $controlHeight;
     padding: 0;
     width: $controlHeight + $inputPaddingWidth - $inputPaddingHeight * 2;
-    &:not(:first-child) {margin-left:5px;}
+    &:not(:first-child) {margin-left:25px;}
     svg {
       width: 100%;
     }
@@ -30,16 +30,13 @@ $colorItemsPerRow: 3;
   input.ql-image[type=file] {
     display: none;
   }
-  button:hover,button:focus,.ql-picker-label:hover{
-    box-shadow: 0 0 0 1px #ddd inset;
+  button:hover,button:focus,.ql-picker-label:hover,.ql-picker-item:hover{
+    color: #febfba;
   }
-  button.ql-active,.ql-picker-label.ql-active{
-    box-shadow: 0 0 0 1px #ddd inset;
-    background-color: #e6e6e6;
-  }
-  button:hover, button:focus, button.ql-active,
-  .ql-picker-label:hover, .ql-picker-label.ql-active,
-  .ql-picker-item:hover, .ql-picker-item.ql-selected {
+  
+  button.ql-active,
+  .ql-picker-label.ql-active,
+  .ql-picker-item.ql-selected {
 		color: $activeColor;
 
 		.ql-fill, .ql-stroke.ql-fill {
@@ -186,17 +183,18 @@ $colorItemsPerRow: 3;
     color: $inactiveColor;
     display: inline-block;
     float: left;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     height: $controlHeight;
     position: relative;
     vertical-align: middle;
+    &:not(:first-child) {margin-left:10px;}
     .ql-picker-label {
       cursor: pointer;
       display: inline-block;
       height: 100%;
-      padding-left: 2px;
-      padding-right: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
       position: relative;
       white-space: nowrap;
       width: 100%;

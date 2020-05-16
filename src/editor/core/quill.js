@@ -98,7 +98,7 @@ class Quill {
     if (this.options.debug) {
       Quill.debug(this.options.debug);
     }
-    console.log('Quill init 0', options);
+    // console.log('Quill init 0', options);
     const html = this.container.innerHTML.trim();
     this.container.classList.add('ql-container');
     this.container.innerHTML = '';
@@ -114,20 +114,21 @@ class Quill {
     this.scroll = new ScrollBlot(this.options.registry, this.root, {
       emitter: this.emitter,
     });
-    console.log('Quill init 1');
+    // console.log('Quill init 1');
     this.editor = new Editor(this.scroll);
     this.selection = new Selection(this, this.scroll, this.emitter);
-    console.log('Quill init 2');
+    // console.log('Quill init 2');
     this.theme = new this.options.theme(this, this.options); // eslint-disable-line new-cap
-    console.log('Quill init 3');
+    // console.log('Quill init 3');
     this.keyboard = this.theme.addModule('keyboard');
     this.clipboard = this.theme.addModule('clipboard');
     this.history = this.theme.addModule('history');
     this.uploader = this.theme.addModule('uploader');
-    console.log('Quill init 4');
+    // console.log('Quill init 4');
     this.theme.init();
-    console.log("Quill init")
+    // console.log("Quill init")
     this.emitter.on(Emitter.events.EDITOR_CHANGE, type => {
+      console.log('Emitter.events.EDITOR_CHANGE', Emitter.events.EDITOR_CHANGE, type);
       if (type === Emitter.events.TEXT_CHANGE) {
         this.root.classList.toggle('ql-blank', this.editor.isBlank());
       }
