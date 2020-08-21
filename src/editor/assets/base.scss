@@ -1,6 +1,6 @@
 
 
-$controlHeight: 30px;
+$controlHeight: 24px;
 $inputPaddingWidth: 8px;
 $inputPaddingHeight: 4px;
 
@@ -65,6 +65,8 @@ $colorItemsPerRow: 3;
   * {
     box-sizing: border-box;
     outline: none;
+    white-space: normal;
+    word-break: break-word;
   }
   .ql-hidden {
     display: none !important;
@@ -86,7 +88,7 @@ $colorItemsPerRow: 3;
   }
   .ql-formats {
     display: inline-flex;
-    padding:0 10px;
+    padding:0 16px;
     vertical-align: middle;
     position: relative;
   }
@@ -200,9 +202,8 @@ $colorItemsPerRow: 3;
       width: 100%;
       &::before {
         display: inline-block;
-        line-height: 28px;
       }
-      .icon{width: 28px;}
+      .icon{width: $controlHeight;}
       svg {
         vertical-align: middle;
       }

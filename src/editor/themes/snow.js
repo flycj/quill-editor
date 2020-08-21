@@ -89,14 +89,14 @@ class SnowTooltip extends BaseTooltip {
       });
     }
     this.textbox.addEventListener("blur", () => {
-      // this.root.classList.contains("ql-hidden") || this.save()
+      this.root.classList.contains("ql-hidden") || this.save()
     })
     
   }
   template(name) {
     switch(name) {
       case 'link': return [
-        '<input type="text" placeholder="输入链接，回车确认">',
+        '完整链接：<input type="text" placeholder="输入完整链接，回车确认">',
         '<a class="ql-remove ql-hidden">' + icons['unlink'] + '</a>',
       ].join(' ');
       case 'video': return [

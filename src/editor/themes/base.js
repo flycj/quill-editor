@@ -13,7 +13,6 @@ const ALIGNS = ['left', 'center', 'right', 'justify'];
 
 const COLORS = [
   '#333333',
-  '#ffffff',
   '#666666',
   '#4ca3ff',
   '#ef4b4b',
@@ -62,6 +61,7 @@ class BaseTheme extends Theme {
   constructor(quill, options) {
     super(quill, options);
     const listener = e => {
+      console.log('BaseTheme', e)
       if (!document.body.contains(quill.root)) {
         document.body.removeEventListener('click', listener);
         return;
@@ -287,7 +287,9 @@ class BaseTooltip extends Tooltip {
       
       this.position(this.quill.getBounds(this.quill.selection.savedRange));
     }
-    value && !n || this.textbox.focus();
+    if (mode !== 'image') {
+      value && !n || this.textbox.focus();
+    }
     // this.textbox.select();
    
     this.root.setAttribute('data-mode', mode);
